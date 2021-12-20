@@ -16,8 +16,8 @@ let titles = [
 	"9. Prämie nur bei Erfolg"
 ]
 
-describe('My First Test', () => {
-	it('Does not do much!', () => {
+describe('Campusjaeger Test', () => {
+	it('Test the "So funktioniert Campusjaeger" section', () => {
 		cy.visit('https://arbeitgeber.campusjaeger.de/')
 		cy.contains("Alle akzeptieren").click()
 		
@@ -25,8 +25,8 @@ describe('My First Test', () => {
 		cy.wait(500) 
 
 
-		cy.contains(titles[0])
-		for (let i = 1; i < titles.length; i++) {
+		// Check titles circle by circle
+		for (let i = 0; i < titles.length; i++) {
 			cy.get("ellipse").eq(i).click({force: true})
 			cy.contains(titles[i])
 		}		
